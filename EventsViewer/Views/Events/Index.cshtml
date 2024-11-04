@@ -5,6 +5,7 @@
 
 <div class="text-center">
     <h1 class="display-4">Events</h1>
+    <a asp-controller="Events" asp-action="Create" class="btn btn-secondary">Create New Event</a>
     <br />
     <table class="table">
         <thead>
@@ -17,6 +18,9 @@
                 </th>
                 <th>
                     Description
+                </th>
+                <th>
+                    Date
                 </th>
                 <th>
                     Actions
@@ -38,8 +42,11 @@
                             @Event.Description
                         </td>
                         <td>
-                            <a class="" asp-controller="Events" asp-action="Edit" asp-route-id="@Event.Id">Edit</a>
-                            <a class="" asp-controller="Events" asp-action="Delete" asp-route-id="@Event.Id">Delete</a>
+                            @Event.Date
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" asp-controller="Events" asp-action="Edit" asp-route-id="@Event.Id">Edit</a>
+                            <a class="btn btn-danger" asp-controller="Events" asp-action="Delete" asp-route-id="@Event.Id">Delete</a>
                         </td>
                      </tr>   
                 }

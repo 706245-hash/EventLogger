@@ -57,5 +57,9 @@ namespace EventsViewer.Controllers
             return RedirectToAction("Index");
 
         }
+        public IActionResult About()
+        {
+            return View();
+        }
     }
 }
