@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Create";
+}
+
+@model EventsViewer.Models.Event
+
+
+<div class="text-content">
+    <h1 class="display-4">Create new Event</h1>
+</div>
+
+<form asp-controller="Events" asp-action="CreateForm">
+    <label>Id</label>
+    <input hidden class="form-control" type="number" placeholder="0" asp-for="Id" />
+
+    <label class="mt-3">Title</label>
+    <input class="form-control" type="text" placeholder="Add a Title" asp-for="EventTitle" />
+
+    <label class="mt-3">Description</label>
+    <input class="form-control" type="text" placeholder="Add a description" asp-for="Description" />
+
+    <button class="btn btn-primary mt-3" type="submit">OK</button>
+
+</form>

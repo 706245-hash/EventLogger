@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Events Page";
+}
+@model List<Event>
+
+<div class="text-center">
+    <h1 class="display-4">Events</h1>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var Event in Model)
+                {
+                     <tr>
+                        <td>
+                            @Event.Id
+                        </td>
+                        <td>
+                            @Event.EventTitle
+                        </td>
+                        <td>
+                            @Event.Description
+                        </td>
+                        <td>
+                            <a class="" asp-controller="Events" asp-action="Edit" asp-route-id="@Event.Id">Edit</a>
+                            <a class="" asp-controller="Events" asp-action="Delete" asp-route-id="@Event.Id">Delete</a>
+                        </td>
+                     </tr>   
+                }
+            }
+        </tbody>
+    </table>
+</div>
